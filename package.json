@@ -4,8 +4,8 @@
   "description": "Simple React-Based Weather App",
   "main": "./app/app.jsx",
   "scripts": {
-    "start": "npm run build-monitor & npm run server",
-    "server": "nodemon server.js",
+    "start": "nodemon server.js",
+    "dev-mode": "webpack-w & nodemon server.js",
     "build-monitor": "webpack -w",
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
