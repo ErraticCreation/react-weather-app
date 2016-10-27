@@ -4,7 +4,7 @@
   "description": "Simple React-Based Weather App",
   "main": "./app/app.jsx",
   "scripts": {
-    "start": "forever start --killSignal=SIGTERM -c nodemon server.js",
+    "start": "node server.js",
     "dev-mode": "webpack -w & nodemon server.js",
     "build-monitor": "webpack -w",
     "build": "webpack",
@@ -15,7 +15,6 @@
   "dependencies": {
     "axios": "^0.9.1",
     "express": "^4.13.4",
-    "forever": "^0.15.2",
     "nodemon": "^1.11.0",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
