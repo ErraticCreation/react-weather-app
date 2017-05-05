@@ -1,9 +1,14 @@
-var webpack = require('webpack');
+const webpack = require('webpack');
+const dotenv = require('dotenv');
+// If OPENWEATHERMAPAPIKEY system variable doesn't exist initialize dotenv script to attempt to pull it from .env file
+if(!JSON.stringify(process.env.OPENWEATHERMAPAPIKEY)){
+  dotenv.config();
+}
 
 module.exports = {
     entry: [
       'script!jquery/dist/jquery.min.js',
-      'script!foundation-sites/dist/foundation.min.js',
+      'script!foundation-sites/dist/js/foundation.min.js',
       './app/app.jsx',
     ],
     externals: {
@@ -13,7 +18,12 @@ module.exports = {
       new webpack.ProvidePlugin({
         '$': 'jquery',
         'jQuery': 'jquery'
-      })
+      }),
+      new webpack.DefinePlugin({
+        'process.env': {
+        'OPENWEATHERMAPAPIKEY': JSON.stringify(process.env.OPENWEATHERMAPAPIKEY)
+      }
+})
     ],
     output: {
         path: __dirname,

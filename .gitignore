@@ -12,3 +12,9 @@
 .idea/workspace.xml
 .idea/watcherTasks.xml
 /npm-debug.log
+
+#ignore dotenv variable file
+.env
+
+#ignore bundle.js
+/public/bundle.js
